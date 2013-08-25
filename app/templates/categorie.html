@@ -1,3 +1,22 @@
-$def with (categorie_dict)
+$def with (categorie_dict, sites)
+$var titre: $categorie_dict.nom
 
-$categorie_dict
+<h1>$categorie_dict.nom</h1>
+<p>$categorie_dict.description_longue</p>
+
+$for site in sites:
+  <div> 
+    <h2>$site.titre</h2>
+    <p>$site.description</p>
+    $if site.etiquettes:
+    <div>
+      $for etiquette in site.etiquettes:
+      <div>
+        $etiquette.nom
+      </div>
+    </div>
+    <div>
+      $site.note
+    </div>
+  </div>
+
