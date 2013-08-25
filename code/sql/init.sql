@@ -19,7 +19,7 @@ create table categories (
 
 -- table des sites plateforme de pair à pair
 create table sites (
-    id int(11) not null auto_increment primary key,
+    id int(11) not null primary key,
     url varchar(2083),
     titre varchar(255),
     description text,
@@ -74,3 +74,42 @@ values
     )
 ;
 
+
+insert into sites (
+    id, url,
+    titre,
+    description,
+    categorie,  note
+    )
+values
+    (
+    1, 'http://www.airbnb.fr',
+    'airbnb',
+    'Trouvez un logement. Louez à des personnes dans plus de 34 000 villes et 192 pays.',
+    3,  95
+    ),
+    (
+    2,  'https://www.couchsurfing.org/',
+    'couchsurfing',
+    'Voyagez. Logez chez l\'habitant. Redécouvrez votre ville. Hébergez des voyageurs.',
+    3,  90
+    )
+;
+
+
+insert into etiquettes (
+    id, nom,            description
+    )
+values
+    (
+    1,  'bénévole',     'Les participants sont bénévoles.'
+    )
+;
+
+
+insert into site_etiquettes (
+    site,   etiquette
+    )
+values
+    (2,     1)
+;
